@@ -1,0 +1,4 @@
+GRANT SELECT ON account TO ssbd02mok;
+GRANT SELECT, INSERT ON account TO ssbd02moz;
+
+GRANT USAGE, SELECT,UPDATE ON SEQUENCE account_seq TO ssbd02moz;

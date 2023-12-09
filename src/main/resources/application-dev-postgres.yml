@@ -1,0 +1,26 @@
+db:
+  datasource:
+    init:
+      persistence-unit-name: ssbd02adminPU
+      url: jdbc:postgresql://localhost:5432/ssbd02
+      username: ssbd02admin
+      password: dbadmin
+      jpa:
+        database-action: drop_and_create
+      sql:
+        enable: true
+        data-locations:
+          - script/data.sql
+          - script/permissions.sql
+
+    mok:
+      persistence-unit-name: ssbd02mokPU
+      url: jdbc:postgresql://localhost:5432/ssbd02
+      username: ssbd02mok
+      password: dbmok
+
+    moz:
+      persistence-unit-name: ssbd02mozPU
+      url: jdbc:postgresql://localhost:5432/ssbd02
+      username: ssbd02moz
+      password: dbmoz

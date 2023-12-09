@@ -1,0 +1,13 @@
+version: '3.6'
+name: "spring-ssbd"
+services:
+  postgres:
+    image: "postgres:16"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ssbd02
+      POSTGRES_USER: ssbd02admin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./script/init-users.sql:/docker-entrypoint-initdb.d/init-users.sql:ro
